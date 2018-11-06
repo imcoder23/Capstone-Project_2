@@ -4,13 +4,13 @@ package com.example.hunter.mybloodcall;
  * Created by HuNter on 4/6/2018.
  */
 
-public class firebaseDBhelper {
-    String id;
-    String name;
-    String sex;
-    String city;
-    String bloodGroup;
-    String contactNumber;
+class firebaseDBhelper {
+    private String id;
+    private String name;
+    private String sex;
+    private String city;
+    private String bloodGroup;
+    private String contactNumber;
 
     public firebaseDBhelper(){
 

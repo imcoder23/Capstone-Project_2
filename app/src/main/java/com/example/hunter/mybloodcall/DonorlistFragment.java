@@ -6,9 +6,6 @@ import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,8 +27,8 @@ import java.util.List;
 public class DonorlistFragment extends Fragment implements OnMapReadyCallback {
 
 
-    GoogleMap map;
-    String City;
+    private GoogleMap map;
+    private String City;
     public DonorlistFragment() {
         // Required empty public constructor
     }

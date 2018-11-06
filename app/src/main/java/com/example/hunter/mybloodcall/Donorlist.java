@@ -23,13 +23,13 @@ import java.util.ArrayList;
 
 public class Donorlist extends AppCompatActivity {
 
-    ListView listview;
-    FirebaseDatabase database;
-    DatabaseReference ref;
-    ArrayList<String> list;
-    ArrayAdapter<String> adapter;
-    firebaseDBhelper donorlist;
-    FragmentManager fm;
+    private ListView listview;
+    private FirebaseDatabase database;
+    private DatabaseReference ref;
+    private ArrayList<String> list;
+    private ArrayAdapter<String> adapter;
+    private firebaseDBhelper donorlist;
+    private FragmentManager fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class Donorlist extends AppCompatActivity {
         setContentView(R.layout.donorlist);
 
         Bundle extras = getIntent().getExtras();
+        assert extras != null;
         String city = extras.getString("City").toUpperCase();
         String bloodGroup = extras.getString("Blood").toUpperCase();
 
@@ -45,11 +46,11 @@ public class Donorlist extends AppCompatActivity {
 
         donorlist = new firebaseDBhelper();
 
-        listview =(ListView) findViewById(R.id.lv_donor);
+        listview = findViewById(R.id.lv_donor);
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("donors");
         list = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,list);
+        adapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, list);
         ref.child(city).child(bloodGroup).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

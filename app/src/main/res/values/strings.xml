@@ -1,26 +1,39 @@
 <resources>
-    <string name="app_name">myBloodCall</string>
+    <string name="app_name">BloodCall</string>
     <string name="title_activity_maps">Map</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sex_prompt">Choose a Sex</string>
+    <string-array name="sex_arrays">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 
-        <string name="sex_prompt">Choose a Sex</string>
-        <string-array name="sex_arrays">
-            <item>Male</item>
-            <item>Female</item>
-        </string-array>
+    <string name="app_id">ca-app-pub-2298676047455650~4131427993</string>
+    <string name="bloodgrp_prompt">Choose a blood Group</string>
+    <string name="find_donor">Find Blood Donor</string>
+    <string name="be_donor">Be a Donor</string>
+    <string name="find_all">Find All Donor</string>
+    <string name="donor_info">Donor Information</string>
+    <string name="name">Name</string>
+    <string name="city">City</string>
+    <string name="blood_group">Blood Group</string>
+    <string name="mobile_no">Mobile Number</string>
+    <string name="sex">Sex</string>
+    <string name="submit">Submit</string>
+    <string name="find">Find</string>
+    <string-array name="bloodgrp_arrays">
+        <item>O-</item>
+        <item>O+</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB-</item>
+        <item>AB+</item>
+    </string-array>
+    <string name="appwidget_text">Blood Call</string>
+    <string name="add_widget">Add widget</string>
 
-        <string name="bloodgrp_prompt">Choose a blood Group</string>
-        <string-array name="bloodgrp_arrays">
-            <item>O-</item>
-            <item>O+</item>
-            <item>A+</item>
-            <item>A-</item>
-            <item>B+</item>
-            <item>B-</item>
-            <item>AB-</item>
-            <item>AB+</item>
-        </string-array>
+    <string name="unit_Id">ca-app-pub-2298676047455650/2093541723</string>
 
 </resources>

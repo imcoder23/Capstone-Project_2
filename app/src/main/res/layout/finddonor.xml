@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar_find"
+        layout="@layout/toolbar" />
 
     <TextView
         android:id="@+id/tv_city"
@@ -12,10 +14,11 @@
         android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="100dp"
-        android:text="City"
+        android:text="@string/city"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="28dp" />
 
     <TextView
         android:id="@+id/tv_Blood"
@@ -23,18 +26,19 @@
         android:layout_height="29dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="36dp"
-        android:text="Blood Group"
+        android:text="@string/blood_group"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_city"
+        android:layout_marginLeft="28dp" />
 
     <EditText
         android:id="@+id/spinner_city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
         android:layout_marginTop="84dp"
-        android:hint="Kathmandu"
+        android:layout_marginEnd="112dp"
+        android:layout_marginRight="112dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,9 +48,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="116dp"
         android:layout_marginTop="148dp"
-        android:hint="A+"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="116dp" />
 
     <Button
         android:id="@+id/Submit_donor"
@@ -54,9 +58,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="148dp"
         android:layout_marginTop="36dp"
-        android:text="Find"
-        android:onClick="findDonor"
+        android:text="@string/find"
+        android:onClick="find_Donor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Blood" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Blood"
+        android:layout_marginRight="148dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.hunter.mybloodcall.MainActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+    
     <Button
         android:id="@+id/findDonor"
         android:layout_width="130dp"
@@ -15,7 +19,7 @@
         android:layout_marginTop="104dp"
         android:background="@color/Red"
         android:onClick="findDonor"
-        android:text="Find Blood Donor"
+        android:text="@string/find_donor"
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,24 +33,36 @@
         android:layout_marginTop="228dp"
         android:background="@color/Red"
         android:onClick="beDonor"
-        android:text="Be A Donor"
+        android:text="@string/be_donor"
         android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="124dp" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="124dp"
         android:layout_marginStart="124dp"
-        android:layout_marginTop="84dp"
-        android:text="Find All Donor"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="72dp"
         android:background="@color/Red"
-        android:textColor="@color/White"
         android:onClick="MapsActivity"
+        android:text="@string/find_all"
+        android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/beDonor" />
 
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="60dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/unit_Id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
 </android.support.constraint.ConstraintLayout>

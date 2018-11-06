@@ -3,7 +3,6 @@ package com.example.hunter.mybloodcall;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -17,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 
 public class beDonor extends AppCompatActivity {
-    dbhelper mydb;
+    private dbhelper mydb;
     DatabaseReference databaseDonor;
 
     @Override
@@ -31,11 +30,11 @@ public class beDonor extends AppCompatActivity {
 
     public void Donorform(View view) {
 
-        EditText name = (EditText) findViewById(R.id.et_Name);
-        Spinner sex =  (Spinner) findViewById(R.id.et_sex);
-        EditText city = (EditText) findViewById(R.id.dropdownCity);
-        Spinner bloodGroup = (Spinner) findViewById(R.id.dropdownGroup);
-        EditText phNumber = (EditText) findViewById(R.id.edt_mobileNumber);
+        EditText name =  findViewById(R.id.et_Name);
+        Spinner sex =   findViewById(R.id.et_sex);
+        EditText city =  findViewById(R.id.dropdownCity);
+        Spinner bloodGroup =  findViewById(R.id.dropdownGroup);
+        EditText phNumber =  findViewById(R.id.edt_mobileNumber);
 
         String Name = name.getText().toString().toUpperCase();
         String Sex = sex.getSelectedItem().toString().toUpperCase();

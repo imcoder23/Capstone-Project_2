@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by HuNter on 4/4/2018.
  */
 
-public class dbhelper extends SQLiteOpenHelper {
+class dbhelper extends SQLiteOpenHelper {
 
     static final String Database_Name = "donorName.db";
     static final String table_name = "Donor_Name";
@@ -56,12 +56,7 @@ public class dbhelper extends SQLiteOpenHelper {
         cv.put(Col_5,Phoneno);
 
         long result = db.insert(table_name,null,cv);
-            if(result == -1){
-                return false;
-            }
-            else{
-                return true;
-            }
+        return result != -1;
     }
 
 
