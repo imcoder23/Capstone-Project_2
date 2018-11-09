@@ -1,13 +1,16 @@
 package com.example.hunter.mybloodcall;
 
+import android.annotation.TargetApi;
+import android.content.ContentValues;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.hunter.mybloodcall.Data.DatabaseContract;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 /**
@@ -31,6 +35,7 @@ public class Donorlist extends AppCompatActivity {
     private firebaseDBhelper donorlist;
     private FragmentManager fm;
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +43,11 @@ public class Donorlist extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         assert extras != null;
-        String city = extras.getString("City").toUpperCase();
+        String city = Objects.requireNonNull(extras.getString("City")).toUpperCase();
         String bloodGroup = extras.getString("Blood").toUpperCase();
 
-        Log.d("NAME",city);
-        Log.d("Blood",bloodGroup);
-
         donorlist = new firebaseDBhelper();
-
+        final ContentValues contentValues = new ContentValues();
         listview = findViewById(R.id.lv_donor);
         database = FirebaseDatabase.getInstance();
         ref = database.getReference("donors");
@@ -64,11 +66,17 @@ public class Donorlist extends AppCompatActivity {
                         list.add(donorlist.getCity());
                         list.add(donorlist.getBloodGroup());
                         list.add(donorlist.getContactNumber());
+
+                        contentValues.put(DatabaseContract.DonorsEntry.COLUMN_NAME, donorlist.getName());
+                        contentValues.put(DatabaseContract.DonorsEntry.COLUMN_CITY, donorlist.getCity());
+                        contentValues.put(DatabaseContract.DonorsEntry.COLUMN_BlOODGROUP, donorlist.getBloodGroup());
+                        getContentResolver().insert(DatabaseContract.DonorsEntry.CONTENT_URI, contentValues);
                     }
                     else{
                         Toast.makeText(getApplicationContext(),"Data not Found",Toast.LENGTH_SHORT).show();
                     }
                 }
+
                 listview.setAdapter(adapter);
             }
 
@@ -76,6 +84,7 @@ public class Donorlist extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
 
          fm = getSupportFragmentManager();
          DonorlistFragment dl = DonorlistFragment.newInstance(city);

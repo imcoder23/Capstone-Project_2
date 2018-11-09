@@ -17,11 +17,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/app_id"/>
-
+            android:value="@string/app_id" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -35,7 +33,7 @@
         <activity android:name=".Donorlist" />
         <activity
             android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
 
         <receiver android:name=".BloodCallAppWidget">
             <intent-filter>
@@ -46,6 +44,18 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/blood_call_app_widget_info" />
         </receiver>
+
+        
+        <provider
+            android:authorities="com.example.hunter.mybloodcall"
+            android:name=".Data.DatabaseContentProvider"
+            android:exported="false"/>
+
+        <activity android:name=".WidgetConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

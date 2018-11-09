@@ -15,17 +15,14 @@ public class BloodCallAppWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
-
         Intent intent = new Intent(context, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
         CharSequence widgetText = context.getString(R.string.appwidget_text);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.blood_call_app_widget);
-        views.setTextViewText(R.id.appwidget_text, widgetText);
-        views.setOnClickPendingIntent(R.id.appwidget_text,pendingIntent);
-
         // Instruct the widget manager to update the widget
+        views.setTextViewText(R.id.data_donors,WidgetConfigureActivity.widgetData);
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
 

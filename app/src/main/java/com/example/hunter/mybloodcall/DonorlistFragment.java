@@ -53,12 +53,6 @@ public class DonorlistFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
-//        LatLng DonorCity = new LatLng(-34, 151);
-//        MarkerOptions markerOptions = new MarkerOptions();
-//        markerOptions.position(DonorCity).title("City");
-//        map.addMarker(markerOptions);
-//        map.moveCamera(CameraUpdateFactory.newLatLng(DonorCity));
-
         List<Address> addressList;
 
         if(!City.equals(""))

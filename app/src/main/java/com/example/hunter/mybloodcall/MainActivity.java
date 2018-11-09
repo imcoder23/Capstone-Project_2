@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toolbar;
 
 import com.facebook.stetho.Stetho;
 import com.google.android.gms.ads.AdRequest;
@@ -50,14 +49,11 @@ public class MainActivity extends AppCompatActivity {
     public void beDonor(View view) {
         Intent intent = new Intent(this,beDonor.class);
         startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-//        startActivity(new Intent(this, beDonor.class));
     }
 
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void MapsActivity(View view) {
-//        Intent intent = new Intent(this,MapsActivity.class);
-//        startActivity(intent,ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
         startActivity(new Intent(this,MapsActivity.class));
     }
 }

@@ -2,6 +2,7 @@
     <string name="app_name">BloodCall</string>
     <string name="title_activity_maps">Map</string>
 
+    <string name="appwidget_text">Blood Call</string>
     <string name="sex_prompt">Choose a Sex</string>
     <string-array name="sex_arrays">
         <item>Male</item>
@@ -31,9 +32,14 @@
         <item>AB-</item>
         <item>AB+</item>
     </string-array>
-    <string name="appwidget_text">Blood Call</string>
+
+
+
     <string name="add_widget">Add widget</string>
 
     <string name="unit_Id">ca-app-pub-2298676047455650/2093541723</string>
+    <string name="choose">Choose Blood Group And City</string>
+    <string name="lastsearched">Last Searched Donors Name</string>
+
 
 </resources>
